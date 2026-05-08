@@ -292,3 +292,7 @@ runs:
         if [[ "$csm" != "" ]]; then
           ./scripts/environment/prepare.sh --modules="${csm}"
         fi
+
+        if [[ "$NEEDS_RUST" == "true" ]]; then
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+        fi
